@@ -1,0 +1,790 @@
+@charset "UTF-8";
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panelaccordion {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/************************ ESTILOS PARA TABS HORIZONTALES ***************************/
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/************************ ESTILOS PARA TABS VERTICALES***************************/
+/* Style the tab */
+/*
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+}
+
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+}
+*/
+
+/**************************** styled10 *********************************/
+body {
+	/*color: #5C5B5B;*/
+	color: #000000;
+	background: rgb(250, 250, 250);
+	margin: 0px 0px 0px 0px;
+	/*text-align: center;*/
+	overflow: scroll;
+	overflow-x:hidden; 
+	overflow-y:auto;
+}
+#contenedor{
+	text-align: left;
+	/* Con esta propiedad se fija el ancho de la pagina */
+	background-color : #ffffff;
+	/*margin: 0 auto; /* Esto es lo que centra el contenedor en el navegador */
+	/*border-bottom : 1px solid #cccccc;
+	border-left : 1px solid #cccccc;
+	border-top : 1px solid #cccccc;
+	border-right : 1px solid #cccccc;
+	*/	
+}
+#contenido_cuerpo{
+	text-align: left;
+	/* Con esta propiedad se fija el ancho de la pagina */
+	background-color : #ffffff;
+	/* margin: 10;  /* Esto es lo que centra el contenedor en el navegador */
+}
+#opciones_cuerpo{
+	text-align: left;
+	/* Con esta propiedad se fija el ancho de la pagina */
+	background-color : #ffffff;
+	margin: 10;  /* Esto es lo que centra el contenedor en el navegador */
+	font-size: 8pt;
+}
+
+#cabecera{
+	width: 100%;
+	height: 120px;
+	/* border-top: 1px solid #cccccc; */
+	background: url(../images/bg_blue.png) top left repeat;
+	/* background: #6E6E6E url(../images/logo_cenco_transparente.png) center center no-repeat; */
+}
+#appUserData{
+	width: 100%;
+	height: 30px;
+	color: white;
+	text-align: right;
+	/* border-top: 1px solid #cccccc; */
+	background: #6E6E6E center center no-repeat;
+}
+#cabeceraLogo{
+	width: 100%;
+	height: 120px;
+	background: url(../images/logo_cenco_transparente.png) center center no-repeat; 
+}
+#cabeceraLogoCenter{
+	width: 100%;
+	height: 120px;
+	background: url(../images/logo_cenco_transparente.png) center center no-repeat; 
+}
+#divCuerpo{
+	width: 100%;
+	min-height: 400px;
+	/* border-top: 1px solid #cccccc; */
+	padding: 0px 0px 0px 0px;
+}
+#divSponsors{
+	width: 100%;
+	height: 50px;
+	background: #37B4B4 url(../images/productosReckitt.png) top right repeat;
+}
+#divInfo{
+	width: 900px;
+	/*border-bottom: 1px solid #cccccc;*/
+	margin: 0 auto; /* Esto es lo que centra el contenedor en el navegador */
+	padding: 0px 0px 0px 10px;
+}
+#divSelecciones{
+	width: 80%;
+	padding: 0px 0px 0px 10px;
+	border-bottom: 1px solid #cccccc;
+} 
+#divOpcionSelecciones{
+	/* border-bottom: 1px solid #cccccc; */
+	width: 80%;
+	padding: 0px 0px 0px 10px;
+}
+#divDetalleSelecciones{
+	/* border-bottom: 1px solid #cccccc; */
+	width: 80%;
+	padding: 0px 0px 0px 10px;
+} 
+#divIngresoDetalle{
+	width: 80%;;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 0px 0px 0px 10px;
+	display: none;
+}
+#divIngresoDetalleModificar{
+	width: 80%;;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 0px 0px 0px 10px;
+	display: block;
+}
+#divIngresoNuevoDetalle{
+	width: 80%;;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 0px 0px 0px 10px;
+	display: none;
+}	
+#divIngresoDetallePrincipal{
+	width: 80%;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 0px 0px 0px 10px;
+	display: none;
+}
+#divDetalle{
+	width: 80%;
+	max-height: 400px;
+	/* border-bottom: 1px solid #cccccc; */	
+	padding: 0px 0px 0px 10px;
+	overflow: auto;
+	display: block;
+}
+#divEditDetalle{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */	
+	padding: 0px 0px 0px 10px;
+}
+#divDetallePrincipal{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */	
+	padding: 0px 0px 0px 10px;
+}
+#divMensajes{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */
+	padding: 0px 0px 0px 10px;
+}
+#divMensajesModulo{
+	width: 80%; /* border-bottom: 1px solid #cccccc; */
+	position: relative;	
+	padding: 0px 0px 0px 10px;
+	text-align: left;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+}
+#divMensajesGenerales{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */
+	padding: 0px 0px 0px 10px;
+}
+#divMensajesDetalleSelecciones{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */
+	padding: 0px 0px 0px 0px;
+}
+#divObservaciones{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */
+	padding: 0px 0px 0px 10px;
+	height: 90px;
+}
+#divLogosMarcas{
+	width: 80%;
+	/* border-bottom: 1px solid #cccccc; */
+	padding: 0px 0px 0px 0px;
+	text-align: right;
+}
+#divOpcionesPedido{
+	width: 80%;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 20px 0px 0px 0px;
+	position: relative;
+}
+#divEncabezadoModulo{
+	width: 80%;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 0px 0px 0px 10px;
+}
+#divOpcionesRecibo{
+	width: 80%;
+	/*border-top: 1px solid #cccccc;*/
+	padding: 0px 0px 0px 10px;
+}
+#navegador{
+	background: #6E6E6E url(images/img02.gif) top right no-repeat;
+	padding: 0px 0px 0px 0px;
+	float: right;
+	width: 100%;
+	height: 23px;
+	font-weight: bold;
+}
+
+#navegadorSub{
+	background: #6E6E6E url(images/img02.gif) top right no-repeat;
+	padding : 0px 0px 0px 0px;
+	float: right;
+	width: 100%;
+	height : 23px;
+	border-bottom: 1px solid #cccccc;
+} 
+.slogan {
+	line-height: 160px;
+	height: 160px;
+	padding: 5px 0 0 0;
+	position: relative;
+	font-size: 0.5em;
+	right: 45px;
+	top: 0;
+}
+#navabajo{
+	font-weight : bold;
+} 
+#lateral_izquierdo{
+	width: 0px;
+	/*background: #6E6E6E url(images/slide01.jpg) top left repeat;*/
+	/* background-color: #F5F9ff; */
+	/* Bordes que rodean al recuadro  
+	border-bottom : 1px solid #cccccc;
+	border-left : 1px solid #cccccc;
+	border-right : 1px solid #cccccc;*/
+	/* position: relative; */
+	float:left;
+	height: 150px;
+	text-align: left;
+	font-size: 2.0em;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	text-shadow: 0 1px 1px #3E3E3E;	
+}
+#lateral_derecho{
+	width: 100%;
+	height: 150px;
+	/* Color original background-color: #EBF2FE;  */
+	color: white;
+	background-color: #6E6E6E;
+	padding : 0px 0px 20px 0px;
+	text-align: left;
+	float:right;
+}
+#lateral{
+	width: 0px;
+	/* Color original background-color: #EBF2FE;*/
+	background-color: #FFFFFF; 
+	border-bottom : 1px solid #cccccc;
+	border-left : 1px solid #cccccc;
+	border-top : 1px solid #cccccc;
+	border-right : 1px solid #cccccc;
+	position: relative;
+	float:right;
+	padding: 0px;
+}
+.cuerpolateral{
+padding: 2px 2px 2px 2px;
+/*padding: 5px 4px 13px 10px;*/
+} 
+/* Formulario caja lateral */
+#fbuscar flogin form{
+margin-bottom : 0px;
+margin-top : 0px;
+}
+.combos{
+font-size : 8pt;			
+}
+/* Clases para tablas */
+.thOculta{
+	display: none;;
+}
+.tdOculta{
+	display: none;;
+}
+.thBloqueo{
+	color: Red;
+	font-weight: bold;
+	font-size: 11px;
+}
+.tdImage{
+	background-color: white;
+}
+.tdRedBold{
+	color: Red;
+	font-weight: bold;
+}
+.captionTabla{
+/*	text-align: left;
+	font-size: 12px;
+	font-style: normal;
+	font-weight : bold;
+	align: top;
+	*/
+	text-align: left;
+	font-size: 12px;
+	text-decoration: none;
+	color: black;
+	text-shadow: 0 1px 1px #3E3E3E;
+}
+.captionObservaciones{
+	text-align: left;
+	font-size: 10px;
+	text-decoration: none;
+	color: black;
+	text-shadow: 0 1px 1px #3E3E3E;
+}
+.inputDisabled{
+	disabled: true;
+}
+.filaPar{
+	background-color: #EEEEEE;
+}
+.filaImpar{
+	background-color: white;
+}
+.filaParNovedades{
+	background-color: #E9E9E9;
+}
+.filaImparNovedades{
+	background-color: white;
+}
+.filaParDetalle{
+	background-color: #E9E9E9;
+}
+/*--------------------*/
+.conStock{
+	background: green; 
+	text-align:right;
+	color: White;
+	font-weight : bold;
+}
+.sinStock{
+	background: red; 
+	text-align:right;
+	color: White;
+	font-weight : bold;
+}
+.clienteInhabilitado{
+	background: red; 
+	text-align:center;
+	color: White;
+	font-weight : bold;
+}
+.clienteHabilitado{
+	background: green; 
+	text-align:center;
+	color: White;
+	font-weight : bold;
+}
+.pedidoOnweb{
+	color: Blue;
+	font-weight : bold;
+}
+.pedidoRejected{
+	color: Red;
+	font-weight : bold;
+}
+.pedidoApproved{
+	color: Green;
+	font-weight : bold;
+}
+.pedidoDeleted{
+	color: Red;
+	font-weight : bold;	
+}
+.novedadGeneral{
+	color: Green;
+	font-weight : bold;	
+}
+.novedadParticular{
+	color: Blue;
+	font-weight: bold;		
+}
+.tipoPagoIn{
+	color: Green;
+	font-weight : bold;	
+}
+.tipoPagoOut{
+	color: Blue;
+	font-weight: bold;		
+}
+.totalPedido{
+	text-align: right;
+	font-weight: bold;			
+}
+#campotexto{
+float: left;
+}
+#campotexto input{
+/*width:100px;*/
+}
+#campotextologin{
+float: left;
+}
+#botonbuscar {
+padding-top : 3px;
+padding-left: 106px;
+}
+#botonlogin {
+padding-top : 3px;
+padding-left: 106px;
+position:absolute;
+}
+#botonbuscar input{
+border : 0px none;
+}
+#otras ul{
+margin : 5px 10px 0px 0px;
+padding: 0px 0px 0px 4px;
+list-style: none;
+}
+#otras li{
+padding-left: 14px;
+background: transparent url("images/bullet.gif") 0 2px no-repeat;
+margin-bottom: 10px;
+}
+#flogin{
+padding-left: 14px;
+background: transparent url("images/bullet.gif") 0 2px no-repeat;
+margin-bottom: 5px;
+}
+#pie{
+	/* Desde: Esto fija el pie en el bore inferior del navegador */
+	bottom: 0 !important;
+	/* bottom: -1px; */
+	/* Hasta:Esto fija el pie en el bore inferior del navegador */
+	width: 100%;
+	height: 75px;
+	font-size: 1.0em;
+	text-decoration: none;
+	color: white;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3E3E3E; /*padding: 0px 0px 0px 0px; */
+	text-align: center;
+	background:  #6E6E6E center center no-repeat;
+} 
+#pieLogin{
+	width: 100%;
+	height: 120px;
+	font-size: 1.0em;
+	text-decoration: none;
+	color: white;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3E3E3E; /*padding: 0px 0px 0px 0px; */
+	text-align: center;
+	background:  #6E6E6E
+} 
+td{
+	font-size: 10pt;
+	border-collapse: collapse; /* Esto permite autoajustar el ancho al contenido de la celda */
+}
+tdFecha{
+	width: auto;
+}
+th{
+	text-align: left;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight : bold;
+}
+#tr:hover{
+	background : #8899BB;
+	color : #FFFFFF;
+}
+/* COSAS PARA RESALTAR LINKS AL PASAR POR ENCIMA EN LA BARRA NAVEGADOR */
+#demoLinkList {
+	color: white;
+	margin: 0px 0px 0px 0px;
+ 	padding: 0px;
+}
+#demoLinkList li {
+ 	float: left;
+/* CON ESTO LE DOY UN ANCHO FIJO A CADA OPCION DEL NAVEGADOR width: 8em; */
+}
+#demoLinkList a:link {
+ display: block;
+ padding: 0.5em;
+ /*background-color: #8899BB;
+   background-color: white;*/
+ color: White;
+ text-decoration: none;
+}
+/* Estilo de la opcion de menu al pasar por arriba */
+#demoLinkList a{
+	color: White;
+}
+#demoLinkList a:hover {
+	background-color: White;
+	color:  #595959;
+}
+#targetArea, #blindArea {
+ clear: both;
+ padding: 0.5em 1.5em;
+ margin-bottom: 2em;
+ background: #CCDDFF;
+ height: 15em;
+ overflow: auto;
+}
+#tblCabecera td{
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	text-shadow: 0 1px 1px #3E3E3E;
+}
+#tblOpciones{
+	text-align: right;
+	width: 100%;
+}
+#tblItems{
+	width: 100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblItemsRecibo{
+	width: 100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblComprobantesRecibo{
+	width: 100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblDesdeHasta{
+	width: 100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblSponsors td{
+	width: 50%;
+	height: 50%;
+}
+#tblObservaciones{
+  	width:100%;
+  	margin:0 auto; 
+	text-align: left;
+	border: 1px solid #cccccc;
+}
+#tblNotaInterna{
+  	width:100%;
+  	margin:0 auto; 
+	text-align: left;
+	border: 1px solid #cccccc;
+}
+#tblIngresoCliente{
+   width:100%;
+   margin:0 auto;  
+   border: 1px solid #cccccc;
+}
+#tblIngresoNovedad{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblLogin{
+	color: White;
+}
+#tblIngresoPago{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblIngresoPrincipal{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblNovedades{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblDetalle{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+	text-align: left;
+}
+#tblEditDetalle{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+	text-align: left;
+}
+#tblDetalleCliente{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#tblIngresoArticulo{
+   width:100%;
+   margin:0 auto;  
+   border: 1px solid #cccccc;
+}
+#tblReingresoArticulo{
+   width:100%;
+   margin:0 auto;  
+   border: 1px solid #cccccc;
+}
+#tblEncabezadoModulo{
+   width:100%;
+   margin:0 auto;  
+	border: 1px solid #cccccc;
+}
+#txtObservaciones{
+   width:100%;
+}
+#txtNotaInterna{
+   width:100%;
+}
+#fijoArt{
+	color: Red;
+	font-weight: bold;
+}
+/* Inicio: Estilos para los calendarios */
+.fc_main { 
+	background: #D1F1F1;
+	border: 1px solid #000000; 
+	font-family: Verdana; 
+	font-size: 10px; 
+}
+.fc_date { 
+	border: 1px solid #D9D9D9;  
+	cursor:pointer; 
+	font-size: 10px; 
+	text-align: center;
+}
+.fc_dateHover, TD.fc_date:hover { 
+	cursor:pointer; 
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF; 
+	border-right: 1px solid #999999; 
+	border-bottom: 1px solid #999999; 
+	background: #E7E7E7; 
+	font-size: 10px; 
+	text-align: center; 
+}
+.fc_wk {
+	font-family: Verdana; 
+	font-size: 10px; 
+	text-align: center;
+}
+.fc_wknd { 
+	color: #FF0000; 
+	font-weight: bold; 
+	font-size: 10px; 
+	text-align: center;
+}
+.fc_head { 
+	background: #000066; 
+	color: #FFFFFF; 
+	font-weight:bold; 
+	text-align: left;  
+	font-size: 11px; 
+}
+/* Fin: Estilos para los calendarios */
+/* logoFijo es un div que se coloca en una parte de la pantalla inmovil */
+#divLogosMarcasFijo {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	width: 50%;
+	height: 50%;
+	background-color: #00ff00;
+}
+
+/* Tabla Login */
+.tableLogin{
+	table-layout: fixed;
+	float: center;
+    width: 50px;
+}
+
+.thLogin, .tdLogin {
+    width: 10px;
+    word-wrap: break-word;
+}
